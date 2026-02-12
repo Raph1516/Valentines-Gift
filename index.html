@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioluminescent Valentine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="message">Happy Valentines My Love</div>
+
+    <div class="hearts-container" id="hearts-layer"></div>
+
+    <div class="garden">
+        <div class="plant main">
+            <div class="flower-head large">
+                <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+                <div class="flower-center"></div>
+            </div>
+            <div class="stem">
+                <div class="stem-leaf left" style="bottom: 20%;"></div>
+                <div class="stem-leaf right" style="bottom: 40%;"></div>
+                <div class="stem-leaf left" style="bottom: 60%;"></div>
+            </div>
+        </div>
+
+        <div class="plant side-left">
+            <div class="flower-head med">
+                <div class="petal p1"></div><div class="petal p2"></div><div class="flower-center"></div>
+            </div>
+            <div class="stem">
+                <div class="stem-leaf left" style="bottom: 30%;"></div>
+                <div class="stem-leaf right" style="bottom: 55%;"></div>
+            </div>
+        </div>
+
+        <div class="plant side-right">
+            <div class="flower-head med">
+                <div class="petal p1"></div><div class="petal p2"></div><div class="flower-center"></div>
+            </div>
+            <div class="stem">
+                <div class="stem-leaf left" style="bottom: 30%;"></div>
+                <div class="stem-leaf right" style="bottom: 55%;"></div>
+            </div>
+        </div>
+
+        <div class="grass-bed">
+            <div class="blade b1"></div><div class="blade b2"></div>
+            <div class="blade b3"></div><div class="blade b4"></div>
+            <div class="blade b5"></div><div class="blade b6"></div>
+            <div class="blade b7"></div><div class="blade b8"></div>
+        </div>
+    </div>
+
+    <script>
+        // Generate falling hearts after flowers grow
+        setTimeout(() => {
+            const container = document.getElementById('hearts-layer');
+            for(let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.opacity = Math.random();
+                container.appendChild(heart);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
